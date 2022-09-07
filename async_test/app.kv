@@ -1,0 +1,15 @@
+#:import asio asyncio
+
+BoxLayout:
+	data:text
+	orientation: 'horizontal'
+	Label:
+		text: 'enter data:'
+	TextInput:
+		id:text
+
+	Button:
+		text: "submit"
+		on_release:
+			#print(root.data.text)
+			asio.run(app.icli.send(root.data.text))
